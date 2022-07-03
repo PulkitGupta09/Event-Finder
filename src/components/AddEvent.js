@@ -5,10 +5,10 @@ import eventContext from "../Context/events/EventContext"
 const AddEvent = () => {
     const context = useContext(eventContext);
     const {addEvent} = context;
-    const [event, setEvent] = useState({title:"",description:"", date: ""})
+    const [event, setEvent] = useState({title:"",description:"", date: "",location:""})
     const handleClick = (e)=>{
       e.preventDefault();
-      addEvent(event.title,event.description,event.date); 
+      addEvent(event.title,event.description,event.date,event.location); 
 
     }
     const onChange = (e)=>{
@@ -27,8 +27,12 @@ const AddEvent = () => {
   <input type="text" className="form-control" id="description"  name="description" onChange = {onChange}/>
 </div>
 <div className="mb-3">
-  <label htmlFor="date" className="form-label">Date and Time</label>
-  <input type="text" className="form-control" id="date"  name="date" onChange = {onChange}/>
+  <label htmlFor="location" className="form-label">Location</label>
+  <input type="text" className="form-control" id="location"  name="location" onChange = {onChange}/>
+</div>
+<div className="mb-3">
+  <label htmlFor="date" className="form-label">Date</label>
+  <input type="date" className="form-control" id="date"  name="date" onChange = {onChange}/>
 </div>
 <button type="submit" className="btn btn-primary" onClick={handleClick}>Add Event</button>
 </form>
