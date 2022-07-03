@@ -50,8 +50,8 @@ const EventState = (props)=>{
     // Add a Event
     const addEvent = (title,description,date,location)=>{
         const event = {
-            "id": "Cooking Raw",
-            "name": "Cooking Raw",
+            "id": "Cofsoking Raw",
+            "name": "Cookifsng Raw",
             "title": title,
             "description": description,  
             "location": location,

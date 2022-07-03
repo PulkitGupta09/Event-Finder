@@ -6,7 +6,6 @@ import {
 } from "react-router-dom";
 import Navbar from './components/Navbar';
 import Home from './components/Home';
-import About from './components/About';
 import SearchEvent from './components/SearchEvent';
 import EventState from './Context/events/EventState';
 
@@ -19,7 +18,6 @@ function App() {
   <div className="container">
     <Routes>
       <Route path="/" element={<Home />}/>
-      <Route path="/about" element={<About/>}/>
       <Route path="/searchEvent" element={<SearchEvent/>}/>
     </Routes>
   </div>

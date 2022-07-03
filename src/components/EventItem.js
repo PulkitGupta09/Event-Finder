@@ -16,7 +16,7 @@ const EventItem = (props) => {
           <p className="card-text text-success">
             Event Date: {event.date}
           </p> 
-          <p className="card-text text-warning text-secondary">
+          <p className="card-text text-danger text-secondary">
             {event.location}
           </p> 
           <i className="fa-solid fa-trash mx-3" onClick = {()=>{deleteEvent(event.id)}}></i>
