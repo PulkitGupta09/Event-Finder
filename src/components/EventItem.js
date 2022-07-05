@@ -4,7 +4,7 @@ import eventContext from "../Context/events/EventContext"
 const EventItem = (props) => {
   const context = useContext(eventContext);
   const {deleteEvent} = context;
-  const {event} = props;
+  const {event,updateEvent} = props;
   return (
     <div className = "col-md-3">
       <div className="card my-3">
@@ -20,7 +20,7 @@ const EventItem = (props) => {
             {event.location}
           </p> 
           <i className="fa-solid fa-trash mx-3" onClick = {()=>{deleteEvent(event.id)}}></i>
-          <i className="fa-solid fa-pen-to-square mx-2"></i>
+          <i className="fa-solid fa-pen-to-square mx-2" onClick = {()=>{updateEvent(event)}}></i>
         </div>
       </div>
     </div>

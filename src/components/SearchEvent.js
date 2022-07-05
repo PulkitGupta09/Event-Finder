@@ -8,26 +8,21 @@ const SearchEvent = () => {
     const {events} = context;
   return (
     <>
-    <div className="container my-4">
+    <div className="row my-3">
         <form className="d-flex text-center" role="search">
         <input className="form-control me-2" type="search" placeholder="Enter to search event" onChange={(event)=>{setSearchTerm(event.target.value)}} aria-label="Search Events"/>
       </form>
        {events.filter((val)=>{
-        if(searchTerm === ""){
-            return val
-        }
-        else if(val.title.toLowerCase().includes(searchTerm.toLowerCase())){
-            return val
-        }
+        // if(searchTerm === ""){
+        //     return val
+        // }
+        // else if(val.title.toLowerCase().includes(searchTerm.toLowerCase())){
+        //     return val
+        // }
+        return (val.title.toLowerCase().includes(searchTerm.toLowerCase()));
       }).map((val)=>{
         return (
-            <div className="container">
-            <div className="row g-2">
-                
                 <EventItem event = {val} />
-
-            </div>
-            </div>
         )
       })}
     </div>

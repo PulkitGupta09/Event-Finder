@@ -69,8 +69,20 @@ const EventState = (props)=>{
     }
 
     // Edit a Event
-    const editEvent = ()=>{
-        
+    const editEvent = (id,title,description,location,date)=>{
+      let newEvents = JSON.parse(JSON.stringify(events));
+        for (let index = 0; index < newEvents.length; index++) {
+          const element = newEvents[index];
+          if(element.id===id){
+            newEvents[index].title = title;
+            newEvents[index].description = description;
+            newEvents[index].date = date;
+            newEvents[index].location = location;
+            break;
+          }
+          setEvents(newEvents);
+          
+        }
     }
 
     return (
